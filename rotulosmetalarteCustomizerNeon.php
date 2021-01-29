@@ -9,6 +9,26 @@ Author URI: https://www.ploshshop.com
 License: GPLv2 
 */
 
+//Archivos css y js propios del plugin:
+include(plugin_dir_url(__FILE__).'funciones.php');
+
+// Register Style
+function custom_styles() {
+
+    wp_register_style( 'dv-custom', plugin_dir_url(__FILE__).'css/custom.css', false, '1.0' );
+    wp_enqueue_style( 'dv-custom' );
+
+}
+add_action( 'wp_enqueue_scripts', 'custom_styles',10 );
+
+// Register Script
+function custom_scripts() {
+
+    wp_register_script( 'main', plugin_dir_url(__FILE__).'js/custom.js', array( 'jquery' ), '1.0', true );
+    wp_enqueue_script( 'main' );
+
+}
+add_action( 'wp_enqueue_scripts', 'custom_scripts' );
 
 # Agregar informacion predeterminada al activar el plugin
 //Este Script se correra en 3 momentos: Al activar por primera vez, al actualizar, al reactivar
@@ -21,10 +41,9 @@ function cn_set_default_options() {
     }
 }
 
-#Agregar esta condiguracion al menu
-
+#Agregar esta condiguración al menu
 function cn_menu_ajustes() {
-    add_options_page( 'Rotulos Metalarte Customizer Neon', //Titulo de la pagina
+    add_options_page( 'Customizer Neon', //Titulo de la pagina
                       'Customizer Neon', //Nombre del menu
                       'manage_options', //Nivel de acceso, solo usuarios
                       'cn-conf-ga', // slug
@@ -35,31 +54,11 @@ add_action( 'admin_menu', 'cn_menu_ajustes' );
 
 //Generar el codigo de la pagina de actualización
 function cn_genera_pagina() {
-    // Conseguir el valor del Precio Base
-    $cn_precio_base = get_option( 'cn_precio_base' ) ;
 
-    ?>
+  // Conseguir el valor del Precio Base
+  $cn_precio_base = get_option( 'cn_precio_base' ) ;
 
-    <div class="wrap">
-    <h2>Configuración Customizer Neon</h2>
-
-    <form method="post" action="admin-post.php">
-      <input type="hidden" name="action"  value="guardar_ga" />
-
-      <!-- mejorar la seguridad -->
-      <?php wp_nonce_field('token_ga'); ?>
-
-      Precio Base:
-      
-      <input type="text" name="cn_precio_base"
-          value="<?php echo esc_html($cn_precio_base);
-          ?>"/>
-
-       <br />
-      <input type="submit" value="Guardar" class="button-primary"/>
-    </form>
-    </div>
-<?php
+  require('formularioAdmin/configuracionesForm.php'); 
 }
 
 add_action( 'admin_post_guardar_ga', 'cn_guardar_ga' );
@@ -74,18 +73,22 @@ function cn_guardar_ga() {
     check_admin_referer( 'token_ga' );
 
     //Limpiar valor, para prevenir problemas de seguridad
-    $codigo_ga = sanitize_text_field( $_POST['codigo_ga'] );
+    $cn_precio_base = sanitize_text_field( $_POST['cn_precio_base'] );
 
     // Guardar en la base de datos
-    update_option( 'cn_ga_cuenta', $codigo_ga );
+    update_option( 'cn_precio_base', $cn_precio_base );
 
     // Regresamos a la pagina de ajustes
-    wp_redirect( add_query_arg( 'page',
-                                'cn-conf-ga',
-                            admin_url( 'options-general.php' ) ) );
+    wp_redirect( 
+      
+      add_query_arg ( 
+        'page',
+        'cn-conf-ga',
+        admin_url( 'options-general.php' ) 
+      ) 
+    );
     exit;
 }
-
 
 //Crear un filtro para modificar el contenido del articulo....
 add_filter( 'the_content', 'cn_agregar_anuncio' );
@@ -105,25 +108,13 @@ function cn_agregar_anuncio ( $the_content ) {
       // Al final del articulo agregar el codigo del anuncio....
       //$articulo .= '<div class="ads"> *** Aquí va el formulario *** </div>';
 
-
- 
-
       require('formularioCustomizer.php');
     }
 
     // siempre debe regresar el contenido que se desea mostrar
     //return $articulo;
-    return;
-
-
-
-
-
-
-
-
-
-
+    return;  
+}
 
 add_action('wp_ajax_jnjtest', 'jnj_mi_funcion');
 add_action('wp_ajax_nopriv_jnjtest', 'jnj_mi_funcion');
@@ -132,30 +123,18 @@ add_action('wp_ajax_nopriv_jnjtest', 'jnj_mi_funcion');
 // en el formato que queramos..
 function jnj_mi_funcion()
 {
-    echo 'A response sent to the frontend, requested by the AJAX request done with JavaScript:<br>';
-    echo 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
-        .' ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation'
-        .' ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in'
-        .' reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur'
-        .' sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id'
-        .' est laborum.<br>';
-    wp_die();
-}
-// ..y claro, podremos definir tantas funciones como queramos. Además de que podemos
-// parametrizar cada función y leer los valores pasados mediante JavaScript, leyéndolos con $_POST..
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
+  global $wpdb;
+
+  $sql = "SELECT * FROM {$wpdb->prefix}options WHERE option_name = 'cn_precio_base'";
+
+  $results = $wpdb->get_results( $sql, OBJECT );
+
+  foreach ($results as $key ) {
+    
+    echo $key->option_value;
+
+  }
+
+  wp_die();
 }

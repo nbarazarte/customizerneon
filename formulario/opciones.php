@@ -1,3 +1,10 @@
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Precio</label>
+  <input type="number" readonly class="form-control-plaintext" id="precio" value="0">
+</div>
+
+
 <div class="col-12 form-floating mb-3">
   <input type="text" class="form-control" id="rotulo" placeholder="Tu texto" value="Café Hola">
   <label for="rotulo">Escríbe tu texto aquí</label>
