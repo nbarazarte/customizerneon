@@ -132,7 +132,13 @@ function jnj_mi_funcion()
 
   foreach ($results as $key ) {
     
-    echo $key->option_value;
+    //echo 'Precio: '. $key->option_value. '$';
+
+      echo '<h1>
+        <small class="text-muted"> <strong>'. $key->option_value. '&euro;<strong></small>
+      </h1>
+      <div style="font-size: 10px; color: #870D00">IVA incluido</div>
+      <div style="font-size: 10px;">ENVÍO GRATUITO</div>';
 
   }
 

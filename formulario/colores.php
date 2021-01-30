@@ -1,45 +1,192 @@
-      <div class="card">
-        <div class="card-header">
-          Colores
-        </div>
-        <div class="card-body text-center">
+<div class="card">
 
-          <div class="row">
-            <div class="col-sm-12">
+  <div class="card-header">
+    Colores
+  </div>
 
-              <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+  <div class="card-body">
 
-                <input type="radio" class="btn-check" name="colores" id="amarillo" autocomplete="off" checked>
-                <label class="btn btn-primary" style="background-color: yellow" for="amarillo">Amarillo</label>
+    <div class="row">
 
-                <input type="radio" class="btn-check" name="colores" id="azul" autocomplete="off">
-                <label class="btn btn-primary" style="background-color: blue" for="azul">Azul</label>
+      <div class="col-sm-12">
 
-                <input type="radio" class="btn-check" name="colores" id="rojo" autocomplete="off">
-                <label class="btn btn-primary" style="background-color: red" for="rojo">Rojo</label>
+        <div class="card-group">
 
-                <input type="radio" class="btn-check" name="colores" id="verde" autocomplete="off">
-                <label class="btn btn-primary" style="background-color: green" for="verde">Verde</label>
+          <div class="card">
+            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              
+              <div class="row">
 
-                <input type="radio" class="btn-check" name="colores" id="fucsia" autocomplete="off">
-                <label class="btn btn-primary" style="background-color: #e30052" for="fucsia">Fucsia</label>
+                <div class="col-sm-12">
+                  <input class="form-check-input" type="radio" name="colores" id="amarillo" value="amarillo" checked>      
+                </div>
 
-                <input type="radio" class="btn-check" name="colores" id="turquesa" autocomplete="off">
-                <label class="btn btn-primary" style="background-color: #40e0d0" for="turquesa">Turquesa</label>
-
-                <input type="radio" class="btn-check" name="colores" id="morado" autocomplete="off">
-                <label class="btn btn-primary" style="background-color: violet" for="morado">Morado</label>
-
-                <input type="radio" class="btn-check" name="colores" id="naranja" autocomplete="off">
-                <label class="btn btn-primary" style="background-color: orange" for="naranja">Naranja</label>                                 
+                <div class="col-sm-12">
+                  <label class="form-check-label tamanoLetras" for="amarillo">                    
+                    Amarillo
+                  </label>       
+                </div>      
 
               </div>
 
             </div>
+          </div>
 
+          <div class="card">
+            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              
+              <div class="row">
 
+                <div class="col-sm-12">
+                  <input class="form-check-input" type="radio" name="colores" id="azul" value="azul">      
+                </div>
+
+                <div class="col-sm-12">
+                  <label class="form-check-label tamanoLetras" for="azul">                    
+                    Azul
+                  </label>       
+                </div>      
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              
+              <div class="row">
+
+                <div class="col-sm-12">
+                  <input class="form-check-input" type="radio" name="colores" id="verde" value="verde">      
+                </div>
+
+                <div class="col-sm-12">
+                  <label class="form-check-label tamanoLetras" for="verde">                    
+                    Verde
+                  </label>       
+                </div>      
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              
+              <div class="row">
+
+                <div class="col-sm-12">
+                  <input class="form-check-input" type="radio" name="colores" id="rojo" value="rojo">      
+                </div>
+
+                <div class="col-sm-12">
+                  <label class="form-check-label tamanoLetras" for="rojo">                    
+                    Rojo
+                  </label>       
+                </div>      
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+             
+              <div class="row">
+
+                <div class="col-sm-12">
+                  <input class="form-check-input" type="radio" name="colores" id="morado" value="morado">      
+                </div>
+
+                <div class="col-sm-12">
+                  <label class="form-check-label tamanoLetras" for="morado">                    
+                    Morado
+                  </label>       
+                </div>      
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+             
+              <div class="row">
+
+                <div class="col-sm-12">
+                  <input class="form-check-input" type="radio" name="colores" id="turquesa" value="turquesa">      
+                </div>
+
+                <div class="col-sm-12">
+                  <label class="form-check-label tamanoLetras" for="turquesa">                    
+                    Turquesa
+                  </label>       
+                </div>      
+
+              </div>
+
+            </div>
           </div>
 
 
+          <div class="card">
+            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+             
+              <div class="row">
+
+                <div class="col-sm-12">
+                  <input class="form-check-input" type="radio" name="colores" id="naranja" value="naranja">      
+                </div>
+
+                <div class="col-sm-12">
+                  <label class="form-check-label tamanoLetras" for="naranja">                    
+                    Naranja
+                  </label>       
+                </div>      
+
+              </div>
+
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+             
+              <div class="row">
+
+                <div class="col-sm-12">
+                  <input class="form-check-input" type="radio" name="colores" id="fucsia" value="fucsia">      
+                </div>
+
+                <div class="col-sm-12">
+                  <label class="form-check-label tamanoLetras" for="fucsia">                    
+                    Fucsia
+                  </label>       
+                </div>      
+
+              </div>
+
+            </div>
+          </div>                               
+
         </div>
+
       </div>
+
+    </div>
+
+  </div>
+
+</div>
