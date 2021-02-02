@@ -127,20 +127,28 @@ function jnj_mi_funcion()
   global $wpdb;
 
   $sql = "SELECT * FROM {$wpdb->prefix}options WHERE option_name = 'cn_precio_base'";
-
   $results = $wpdb->get_results( $sql, OBJECT );
 
+
+  $fuente = $_POST['fuenteLetras'];
+  $color = $_POST['color'];
+
   foreach ($results as $key ) {
-    
-    //echo 'Precio: '. $key->option_value. '$';
 
-      echo '<h1>
-        <small class="text-muted"> <strong>'. $key->option_value. '&euro;<strong></small>
-      </h1>
-      <div style="font-size: 10px; color: #870D00">IVA incluido</div>
-      <div style="font-size: 10px;">ENVÍO GRATUITO</div>';
+    echo '<h1>
+      <small class="text-muted"> <strong>'. $key->option_value. '&euro;<strong></small>
+    </h1>
+    <div style="font-size: 10px; color: #870D00">IVA incluido</div>
+    <div style="font-size: 10px;">ENVÍO GRATUITO</div>';
 
+    echo '<div id="caja">
+            <div class="neon_effect '.$fuente.'  ">
+              <p>'.$_POST['rotulo'].'</p>          
+            </div>
+          <div id="caja">';
   }
 
+  //echo '<pre>'; print_r($_POST); echo '</pre>';
+  
   wp_die();
 }

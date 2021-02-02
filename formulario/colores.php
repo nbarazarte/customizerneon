@@ -19,7 +19,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="colores" id="amarillo" value="amarillo" checked>      
+                  <input class="form-check-input" type="radio" name="colores" value="amarillo" checked>      
                 </div>
 
                 <div class="col-sm-12">
@@ -40,7 +40,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="colores" id="azul" value="azul">      
+                  <input class="form-check-input" type="radio" name="colores" value="azul">      
                 </div>
 
                 <div class="col-sm-12">
@@ -61,7 +61,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="colores" id="verde" value="verde">      
+                  <input class="form-check-input" type="radio" name="colores" value="verde">      
                 </div>
 
                 <div class="col-sm-12">
@@ -82,7 +82,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="colores" id="rojo" value="rojo">      
+                  <input class="form-check-input" type="radio" name="colores" value="rojo">      
                 </div>
 
                 <div class="col-sm-12">
@@ -103,7 +103,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="colores" id="morado" value="morado">      
+                  <input class="form-check-input" type="radio" name="colores" value="morado">      
                 </div>
 
                 <div class="col-sm-12">
@@ -124,7 +124,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="colores" id="turquesa" value="turquesa">      
+                  <input class="form-check-input" type="radio" name="colores" value="turquesa">      
                 </div>
 
                 <div class="col-sm-12">
@@ -146,7 +146,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="colores" id="naranja" value="naranja">      
+                  <input class="form-check-input" type="radio" name="colores" value="naranja">      
                 </div>
 
                 <div class="col-sm-12">
@@ -167,7 +167,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="colores" id="fucsia" value="fucsia">      
+                  <input class="form-check-input" type="radio" name="colores" value="fucsia">      
                 </div>
 
                 <div class="col-sm-12">
