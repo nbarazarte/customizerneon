@@ -13,7 +13,7 @@
         <div class="card-group">
 
          <div class="card">
-            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
+            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/dimmer/incluir.png'; ?>" class="card-img-top" alt="...">
             <div class="card-body text-center">
             
               <div class="row">
@@ -34,7 +34,7 @@
           </div>
           
           <div class="card">
-            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
+            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/dimmer/noincluir.png'; ?>" class="card-img-top" alt="...">
             <div class="card-body text-center">
               
               <div class="row">

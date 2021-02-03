@@ -10,14 +10,6 @@
     </div>
     <div class="card-body">
 
-      <div class="col-12 text-center">
-
-        <button style="color: #fff; background-color: #870D00" onclick="jQueryDoSomethingAJAX()" class="btn"> <i class="fas fa-magic"></i> Aplicar cambios</button>
-
-      </div>
-
-      <br/>
-
       <div id="myDIV">
         <div class="d-flex justify-content-center">
           <div class="spinner-border text-danger" role="status">
@@ -42,6 +34,12 @@
 
       </div>
       
+      <div class="col-12 text-center">
+
+        <button style="color: #fff; background-color: #870D00" onclick="jQueryDoSomethingAJAX()" class="btn"> <i class="fas fa-magic"></i> Aplicar cambios</button>
+
+      </div>
+
       <br/>
 
         <?php

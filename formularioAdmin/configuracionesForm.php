@@ -15,7 +15,6 @@
   <!-- mejorar la seguridad -->
   <?php wp_nonce_field('token_ga'); ?>
 
-
     <div class="row">
       <div class="col-sm-6">
         <div class="card">
@@ -50,7 +49,6 @@
       </div>
 
     </div>  
-
 
     <div class="row">
       <div class="col-sm-4">
@@ -151,12 +149,8 @@
 
     </div>
 
-
-
   <button type="submit" class="btn btn-primary"> <i class="fas fa-magic"></i> Guardar todo</button>
-
 
 </form>
 
 </div>
-

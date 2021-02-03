@@ -147,60 +147,60 @@
 
 @keyframes neon1 {
   from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF0000, 0 0 35px #FF0000, 0 0 40px #FF0000, 0 0 50px #FF0000, 0 0 75px #FF0000;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff, 0 0 8px #FF1177, 0 0 9px #FF1177, 0 0 15px #FF1177, 0 0 20px #FF1177, 0 0 25px #FF1177;
+    text-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff, 0 0 8px #FF0000, 0 0 9px #FF0000, 0 0 15px #FF0000, 0 0 20px #FF0000, 0 0 25px #FF0000;
   }
 }
 
 @keyframes neon2 {
   from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0000FF, 0 0 35px #0000FF, 0 0 40px #0000FF, 0 0 50px #0000FF, 0 0 75px #0000FF;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff, 0 0 8px #228DFF, 0 0 9px #228DFF, 0 0 15px #228DFF, 0 0 20px #228DFF, 0 0 25px #228DFF;
+    text-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff, 0 0 8px #0000FF, 0 0 9px #0000FF, 0 0 15px #0000FF, 0 0 20px #0000FF, 0 0 25px #0000FF;
   }
 
 }
 
 @keyframes neon3 {/*Amarillo*/
   from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFFF00, 0 0 35px #FFFF00, 0 0 40px #FFFF00, 0 0 50px #FFFF00, 0 0 75px #FFFF00;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff, 0 0 8px #FFDD1B, 0 0 9px #FFDD1B, 0 0 15px #FFDD1B, 0 0 20px #FFDD1B, 0 0 25px #FFDD1B;
+    text-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff, 0 0 8px #FFFF00, 0 0 9px #FFFF00, 0 0 15px #FFFF00, 0 0 20px #FFFF00, 0 0 25px #FFFF00;
   }
 }
 
-@keyframes neon4 {
+@keyframes neon4 {/*Verde*/
   from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #B6FF00, 0 0 35px #B6FF00, 0 0 40px #B6FF00, 0 0 50px #B6FF00, 0 0 75px #B6FF00;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #008000, 0 0 35px #008000, 0 0 40px #008000, 0 0 50px #008000, 0 0 75px #008000;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff, 0 0 8px #B6FF00, 0 0 9px #B6FF00, 0 0 15px #B6FF00, 0 0 20px #B6FF00, 0 0 25px #B6FF00;
+    text-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff, 0 0 8px #008000, 0 0 9px #008000, 0 0 15px #008000, 0 0 20px #008000, 0 0 25px #008000;
   }
 }
 
-@keyframes neon5 {
+@keyframes neon5 {/*Naranja*/
   from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFa500, 0 0 35px #FFa500, 0 0 40px #FFa500, 0 0 50px #FFa500, 0 0 75px #FFa500;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff, 0 0 8px #FF9900, 0 0 9px #FF9900, 0 0 15px #FF9900, 0 0 20px #FF9900, 0 0 25px #FF9900;
+    text-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff, 0 0 8px #FFa500, 0 0 9px #FFa500, 0 0 15px #FFa500, 0 0 20px #FFa500, 0 0 25px #FFa500;
   }	
 }
 
-@keyframes neon6 {
+@keyframes neon6 {/*Morado*/
   from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 35px #ff00de, 0 0 40px #ff00de, 0 0 50px #ff00de, 0 0 75px #ff00de;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #800080, 0 0 35px #800080, 0 0 40px #800080, 0 0 50px #800080, 0 0 75px #800080;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff, 0 0 8px #ff00de, 0 0 9px #ff00de, 0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 25px #ff00de;
+    text-shadow: 0 0 5px #fff, 0 0 6px #fff, 0 0 7px #fff, 0 0 8px #800080, 0 0 9px #800080, 0 0 15px #800080, 0 0 20px #800080, 0 0 25px #800080;
   }	
 }
 
-@keyframes neon7 {
+@keyframes neon7 {/*Turquesa*/
   from {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #40e0d0, 0 0 35px #40e0d0, 0 0 40px #40e0d0, 0 0 50px #40e0d0, 0 0 75px #40e0d0;
   }
@@ -209,7 +209,7 @@
   }
 }
 
-@keyframes neon8 {
+@keyframes neon8 {/*Fucsia*/
   from {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #e30052, 0 0 35px #e30052, 0 0 40px #e30052, 0 0 50px #e30052, 0 0 75px #e30052;
   }

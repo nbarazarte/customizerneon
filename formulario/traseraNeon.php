@@ -13,7 +13,7 @@
         <div class="card-group">
 
           <div class="card">
-            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
+            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/trasera/metacrilato.png'; ?>" class="card-img-top" alt="...">
             <div class="card-body text-center">
               
               <div class="row">
@@ -33,6 +33,27 @@
             </div>
           </div>
 
+          <div class="card">
+            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/trasera/pvc.png'; ?>" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+              
+              <div class="row">
+
+                <div class="col-sm-12">
+                  <input class="form-check-input" type="radio" name="traseraneon" id="pvc" value="<?php echo esc_html($cn_precio_pvc);?>">      
+                </div>
+
+                <div class="col-sm-12">
+                  <label class="form-check-label tamanoLetras" for="pvc">                    
+                    PVC
+                  </label>       
+                </div>      
+
+              </div>
+
+            </div>
+          </div>
+          
           <div class="card">
             <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
             <div class="card-body text-center">
@@ -55,28 +76,7 @@
           </div>
 
           <div class="card">
-            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
-            <div class="card-body text-center">
-              
-              <div class="row">
-
-                <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="traseraneon" id="pvc" value="<?php echo esc_html($cn_precio_pvc);?>">      
-                </div>
-
-                <div class="col-sm-12">
-                  <label class="form-check-label tamanoLetras" for="pvc">                    
-                    PVC
-                  </label>       
-                </div>      
-
-              </div>
-
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
+            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/trasera/contrachapado.png'; ?>" class="card-img-top" alt="...">
             <div class="card-body text-center">
               
               <div class="row">
@@ -97,7 +97,7 @@
           </div>
 
           <div class="card">
-            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/IMG_20201025_045215_345.jpg'; ?>" class="card-img-top" alt="...">
+            <img src="<?php echo plugin_dir_url( __FILE__ ). '../imagenes/trasera/maderadepino.png'; ?>" class="card-img-top" alt="...">
             <div class="card-body text-center">
              
               <div class="row">
