@@ -29,14 +29,14 @@
       <div id="response">
         
         <h1>
-          <small class="text-muted"> <strong> 0 &euro;<strong></small>
+          <small class="text-muted"> <strong> <?php echo esc_html($cn_precio_base);?> &euro;<strong></small>
         </h1>
         <div style="font-size: 10px; color: #870D00"> IVA incluido</div>
         <div style="font-size: 10px;"> ENVÍO GRATUITO</div>
 
         <div id="caja">
-          <div class="neon_effect neon-lights">
-            <p>Regular</p>
+          <div class="neon_effect axaxax amarillo">
+            <p>Metalarte</p>
           </div>
        </div>
 

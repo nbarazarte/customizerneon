@@ -18,13 +18,12 @@
         	 url("Fonts/Axaxax/a5f5da94-f920-46e3-8b2c-b3f1122b7c93.woff") format("woff");
     }
 
-@font-face {
-    font-family: 'neon_lightsregular';
-    src: url('Fonts/NeonLights/neonlights-22d-webfont.woff2') format('woff2'),
-         url('Fonts/NeonLights/neonlights-22d-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+	@font-face {
+	    font-family: 'neon_lightsregular';
+	    src: url('Fonts/NeonLights/neonlights-22d-webfont.woff2') format('woff2'),
+	         url('Fonts/NeonLights/neonlights-22d-webfont.woff') format('woff');
+	    font-weight: normal;
+	    font-style: normal;
 }
 
 /****************************************************************************************/
@@ -41,12 +40,19 @@
 
 .neon_effect {
   text-align: center;
-  font-size: 8vw;
+  font-size: 5em;
   /*
+  font-size: 8vw;
   margin: 50px;*/
   color: #fff;
   transition: all 0.4s;
   
+}
+
+.monoton {
+  font-family: "Monoton";
+  font-style: normal;
+  font-weight: 400;
 }
 
 .axaxax{
@@ -55,6 +61,8 @@
 
 .neon-lights{
   font-family: "neon_lightsregular";
+  font-weight: normal;
+  font-style: normal;
 }
 
 /*Colores:*/
@@ -156,7 +164,7 @@
 
 }
 
-@keyframes neon3 {
+@keyframes neon3 {/*Amarillo*/
   from {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
   }

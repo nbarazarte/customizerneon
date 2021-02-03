@@ -35,10 +35,60 @@ add_action( 'wp_enqueue_scripts', 'custom_scripts' );
 register_activation_hook( __FILE__, 'cn_set_default_options' );
 
 function cn_set_default_options() {
+
     // Revisar si ya se habia activado antes
     if ( get_option( 'cn_precio_base' ) === false ) {
         add_option( 'cn_precio_base', '23.70' );
     }
+
+    if ( get_option( 'cn_precio_dimmer' ) === false ) {
+        add_option( 'cn_precio_dimmer', '5.00' );
+    }
+
+    if ( get_option( 'cn_precio_metacrilato' ) === false ) {
+        add_option( 'cn_precio_metacrilato', '0.0032' );
+    }
+
+    if ( get_option( 'cn_precio_dm' ) === false ) {
+        add_option( 'cn_precio_dm', '0.0020' );
+    }
+
+    if ( get_option( 'cn_precio_pvc' ) === false ) {
+        add_option( 'cn_precio_pvc', '0.0035' );
+    }
+
+    if ( get_option( 'cn_precio_contraenchapado' ) === false ) {
+        add_option( 'cn_precio_contraenchapado', '0.0052' );
+    }
+
+    if ( get_option( 'cn_precio_maderadepino' ) === false ) {
+        add_option( 'cn_precio_maderadepino', '0.0052' );
+    }    
+
+    if ( get_option( 'cn_precio_ancladoalapared' ) === false ) {
+        add_option( 'cn_precio_ancladoalapared', '20.00' );
+    } 
+
+    if ( get_option( 'cn_precio_colgadoaltecho' ) === false ) {
+        add_option( 'cn_precio_colgadoaltecho', '20.00' );
+    } 
+
+    if ( get_option( 'cn_precio_colgadocomouncuadro' ) === false ) {
+        add_option( 'cn_precio_colgadocomouncuadro', '20.00' );
+    } 
+
+    if ( get_option( 'cn_precio_sinsujecion' ) === false ) {
+        add_option( 'cn_precio_sinsujecion', '10.00' );
+    }
+
+    if ( get_option( 'cn_precio_sietediaslaborales' ) === false ) {
+        add_option( 'cn_precio_sietediaslaborales', '00.00' );
+    }     
+
+    if ( get_option( 'cn_precio_4872' ) === false ) {
+        add_option( 'cn_precio_4872', '50.00' );
+    }  
+
 }
 
 #Agregar esta condiguración al menu
@@ -55,8 +105,20 @@ add_action( 'admin_menu', 'cn_menu_ajustes' );
 //Generar el codigo de la pagina de actualización
 function cn_genera_pagina() {
 
-  // Conseguir el valor del Precio Base
-  $cn_precio_base = get_option( 'cn_precio_base' ) ;
+  // Conseguir el valor del Precio base de todos los elementos:
+  $cn_precio_base                 = get_option( 'cn_precio_base' ) ;
+  $cn_precio_dimmer               = get_option( 'cn_precio_dimmer' ) ;
+  $cn_precio_metacrilato          = get_option( 'cn_precio_metacrilato' ) ;
+  $cn_precio_dm                   = get_option( 'cn_precio_dm' ) ;
+  $cn_precio_pvc                  = get_option( 'cn_precio_pvc' ) ;
+  $cn_precio_contraenchapado      = get_option( 'cn_precio_contraenchapado' ) ;
+  $cn_precio_maderadepino         = get_option( 'cn_precio_maderadepino' ) ;
+  $cn_precio_ancladoalapared      = get_option( 'cn_precio_ancladoalapared' ) ;
+  $cn_precio_colgadoaltecho       = get_option( 'cn_precio_colgadoaltecho' ) ;
+  $cn_precio_colgadocomouncuadro  = get_option( 'cn_precio_colgadocomouncuadro' ) ;
+  $cn_precio_sinsujecion          = get_option( 'cn_precio_sinsujecion' ) ;
+  $cn_precio_sietediaslaborales   = get_option( 'cn_precio_sietediaslaborales' ) ;
+  $cn_precio_4872                 = get_option( 'cn_precio_4872' ) ;
 
   require('formularioAdmin/configuracionesForm.php'); 
 }
@@ -73,10 +135,34 @@ function cn_guardar_ga() {
     check_admin_referer( 'token_ga' );
 
     //Limpiar valor, para prevenir problemas de seguridad
-    $cn_precio_base = sanitize_text_field( $_POST['cn_precio_base'] );
+    $cn_precio_base                 = sanitize_text_field( $_POST['cn_precio_base'] );
+    $cn_precio_dimmer               = sanitize_text_field( $_POST['cn_precio_dimmer'] );
+    $cn_precio_metacrilato          = sanitize_text_field( $_POST['cn_precio_metacrilato'] );
+    $cn_precio_dm                   = sanitize_text_field( $_POST['cn_precio_dm'] );
+    $cn_precio_pvc                  = sanitize_text_field( $_POST['cn_precio_pvc'] );
+    $cn_precio_contraenchapado      = sanitize_text_field( $_POST['cn_precio_contraenchapado'] );
+    $cn_precio_maderadepino         = sanitize_text_field( $_POST['cn_precio_maderadepino'] );
+    $cn_precio_ancladoalapared      = sanitize_text_field( $_POST['cn_precio_ancladoalapared'] );
+    $cn_precio_colgadoaltecho       = sanitize_text_field( $_POST['cn_precio_colgadoaltecho'] );
+    $cn_precio_colgadocomouncuadro  = sanitize_text_field( $_POST['cn_precio_colgadocomouncuadro'] );
+    $cn_precio_sinsujecion          = sanitize_text_field( $_POST['cn_precio_sinsujecion'] );
+    $cn_precio_sietediaslaborales   = sanitize_text_field( $_POST['cn_precio_sietediaslaborales'] );
+    $cn_precio_4872                 = sanitize_text_field( $_POST['cn_precio_4872'] );
 
     // Guardar en la base de datos
     update_option( 'cn_precio_base', $cn_precio_base );
+    update_option( 'cn_precio_dimmer', $cn_precio_dimmer );
+    update_option( 'cn_precio_metacrilato', $cn_precio_metacrilato );
+    update_option( 'cn_precio_dm', $cn_precio_dm );
+    update_option( 'cn_precio_pvc', $cn_precio_pvc );
+    update_option( 'cn_precio_contraenchapado', $cn_precio_contraenchapado );
+    update_option( 'cn_precio_maderadepino', $cn_precio_maderadepino );
+    update_option( 'cn_precio_ancladoalapared', $cn_precio_ancladoalapared );
+    update_option( 'cn_precio_colgadoaltecho', $cn_precio_colgadoaltecho );
+    update_option( 'cn_precio_colgadocomouncuadro', $cn_precio_colgadocomouncuadro );
+    update_option( 'cn_precio_sinsujecion', $cn_precio_sinsujecion );
+    update_option( 'cn_precio_sietediaslaborales', $cn_precio_sietediaslaborales );
+    update_option( 'cn_precio_4872', $cn_precio_4872 );
 
     // Regresamos a la pagina de ajustes
     wp_redirect( 
@@ -107,6 +193,22 @@ function cn_agregar_anuncio ( $the_content ) {
     if (is_page(12) && is_main_query() && in_the_loop()){
       // Al final del articulo agregar el codigo del anuncio....
       //$articulo .= '<div class="ads"> *** Aquí va el formulario *** </div>';
+
+
+      // Conseguir el valor del Precio base de todos los elementos:
+      $cn_precio_base                 = get_option( 'cn_precio_base' ) ;
+      $cn_precio_dimmer               = get_option( 'cn_precio_dimmer' ) ;
+      $cn_precio_metacrilato          = get_option( 'cn_precio_metacrilato' ) ;
+      $cn_precio_dm                   = get_option( 'cn_precio_dm' ) ;
+      $cn_precio_pvc                  = get_option( 'cn_precio_pvc' ) ;
+      $cn_precio_contraenchapado      = get_option( 'cn_precio_contraenchapado' ) ;
+      $cn_precio_maderadepino         = get_option( 'cn_precio_maderadepino' ) ;
+      $cn_precio_ancladoalapared      = get_option( 'cn_precio_ancladoalapared' ) ;
+      $cn_precio_colgadoaltecho       = get_option( 'cn_precio_colgadoaltecho' ) ;
+      $cn_precio_colgadocomouncuadro  = get_option( 'cn_precio_colgadocomouncuadro' ) ;
+      $cn_precio_sinsujecion          = get_option( 'cn_precio_sinsujecion' ) ;
+      $cn_precio_sietediaslaborales   = get_option( 'cn_precio_sietediaslaborales' ) ;
+      $cn_precio_4872                 = get_option( 'cn_precio_4872' ) ;
 
       require('formularioCustomizer.php');
     }
@@ -142,13 +244,13 @@ function jnj_mi_funcion()
     <div style="font-size: 10px;">ENVÍO GRATUITO</div>';
 
     echo '<div id="caja">
-            <div class="neon_effect '.$fuente.'  ">
+            <div class="neon_effect '.$fuente.' '.$color.' ">
               <p>'.$_POST['rotulo'].'</p>          
             </div>
           <div id="caja">';
   }
 
-  //echo '<pre>'; print_r($_POST); echo '</pre>';
+  //echo '<pre style="color: #fff">'; print_r($_POST); echo '</pre>';
   
   wp_die();
 }

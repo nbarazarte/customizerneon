@@ -15,7 +15,8 @@ function jQueryDoSomethingAJAX() {
     var x = document.getElementById("tiempos").selectedIndex;
     var y = document.getElementById("tiempos").options;
     //alert("Index: " + y[x].index + " is " + y[x].text);
-    var tiemposEntrega = y[x].text;
+    //var tiemposEntrega = y[x].text;
+    var tiemposEntrega = y[x].value;
 
     var contornos = document.getElementsByName("contornos");
     var txt = "";

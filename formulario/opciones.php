@@ -2,7 +2,7 @@
 
   <div class="col-sm-8">
     <div class="col-12 form-floating mb-3">
-      <input type="text" class="form-control" id="rotulo" placeholder="Tu texto" value="Regular">
+      <input type="text" class="form-control" id="rotulo" placeholder="Tu texto" value="Metalarte">
       <label for="rotulo">Escríbe tu texto aquí</label>
     </div>
   </div>
@@ -13,9 +13,10 @@
       <option value="Tipos de letras" selected>Tipos de letras</option>
       <option style="font-family:'Axaxax W05 Regular';" value="axaxax">Axaxax</option>
       <option style="font-family:'neon_lightsregular';"value="neon-lights">Neon Lights</option>
+      <option style="font-family:'Monoton';"value="monoton">Monoton</option>
     </select>
   </div>
-<br/><br/><br/>
+  <br/><br/><br/>
 </div>
 
 <div class="row g-3">
@@ -38,8 +39,8 @@
     
     <select for="tiempos" class="form-select" id="tiempos">
       <option value="Tiempos de entrega" selected>Tiempos de entrega</option>
-      <option value="7dias">7 días (laborales)</option>
-      <option value="48a72">48 a 72 horas</option>
+      <option value="<?php echo esc_html($cn_precio_sietediaslaborales);?>">7 días (laborales)</option>
+      <option value="<?php echo esc_html($cn_precio_4872);?>">48 a 72 horas</option>
     </select>
   </div>
 

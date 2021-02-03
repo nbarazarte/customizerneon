@@ -19,7 +19,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="traseraneon" id="metacrilato" value="metacrilato" checked>      
+                  <input class="form-check-input" type="radio" name="traseraneon" id="metacrilato" value="<?php echo esc_html($cn_precio_metacrilato);?>" checked>      
                 </div>
 
                 <div class="col-sm-12">
@@ -40,7 +40,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="traseraneon" id="dm" value="dm">      
+                  <input class="form-check-input" type="radio" name="traseraneon" id="dm" value="<?php echo esc_html($cn_precio_dm);?>">      
                 </div>
 
                 <div class="col-sm-12">
@@ -61,7 +61,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="traseraneon" id="pvc" value="pvc">      
+                  <input class="form-check-input" type="radio" name="traseraneon" id="pvc" value="<?php echo esc_html($cn_precio_pvc);?>">      
                 </div>
 
                 <div class="col-sm-12">
@@ -82,7 +82,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="traseraneon" id="contrachapado" value="contrachapado">      
+                  <input class="form-check-input" type="radio" name="traseraneon" id="contrachapado" value="<?php echo esc_html($cn_precio_contraenchapado);?>">      
                 </div>
 
                 <div class="col-sm-12">
@@ -103,7 +103,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="traseraneon" id="maderadepino" value="maderadepino">      
+                  <input class="form-check-input" type="radio" name="traseraneon" id="maderadepino" value="<?php echo esc_html($cn_precio_maderadepino);?>">      
                 </div>
 
                 <div class="col-sm-12">

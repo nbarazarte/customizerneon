@@ -19,7 +19,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="dimmer" id="incluir" value="incluir" checked>      
+                  <input class="form-check-input" type="radio" name="dimmer" id="incluir" value="<?php echo esc_html($cn_precio_dimmer);?>" checked>      
                 </div>
 
                 <div class="col-sm-12">
@@ -40,7 +40,7 @@
               <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="dimmer" id="noincluir" value="noincluir">      
+                  <input class="form-check-input" type="radio" name="dimmer" id="noincluir" value="0">      
                 </div>
 
                 <div class="col-sm-12">
