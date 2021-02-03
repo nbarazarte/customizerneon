@@ -1,12 +1,12 @@
-<?php 
-/* 
+<?php
+/*
 Plugin Name: Rotulos Metalarte Customizer Neon
 Plugin URI: https://www.rotulosmetalarte.es
 Description: Personalizador de anuncios de Neon
-Version: 1.0 
+Version: 1.0
 Author: Neil Barazarte
 Author URI: https://www.ploshshop.com
-License: GPLv2 
+License: GPLv2
 */
 
 //Archivos css y js propios del plugin:
@@ -37,6 +37,11 @@ register_activation_hook( __FILE__, 'cn_set_default_options' );
 function cn_set_default_options() {
 
     // Revisar si ya se habia activado antes
+
+    if ( get_option( 'cn_pagina' ) === false ) {
+        add_option( 'cn_pagina', 'Ninguna' );
+    }
+
     if ( get_option( 'cn_precio_base' ) === false ) {
         add_option( 'cn_precio_base', '23.70' );
     }
@@ -63,19 +68,19 @@ function cn_set_default_options() {
 
     if ( get_option( 'cn_precio_maderadepino' ) === false ) {
         add_option( 'cn_precio_maderadepino', '0.0052' );
-    }    
+    }
 
     if ( get_option( 'cn_precio_ancladoalapared' ) === false ) {
         add_option( 'cn_precio_ancladoalapared', '20.00' );
-    } 
+    }
 
     if ( get_option( 'cn_precio_colgadoaltecho' ) === false ) {
         add_option( 'cn_precio_colgadoaltecho', '20.00' );
-    } 
+    }
 
     if ( get_option( 'cn_precio_colgadocomouncuadro' ) === false ) {
         add_option( 'cn_precio_colgadocomouncuadro', '20.00' );
-    } 
+    }
 
     if ( get_option( 'cn_precio_sinsujecion' ) === false ) {
         add_option( 'cn_precio_sinsujecion', '10.00' );
@@ -83,21 +88,21 @@ function cn_set_default_options() {
 
     if ( get_option( 'cn_precio_sietediaslaborales' ) === false ) {
         add_option( 'cn_precio_sietediaslaborales', '00.00' );
-    }     
+    }
 
     if ( get_option( 'cn_precio_4872' ) === false ) {
         add_option( 'cn_precio_4872', '50.00' );
-    }  
+    }
 
 }
 
 #Agregar esta condiguración al menu
 function cn_menu_ajustes() {
-    add_options_page( 'Customizer Neon', //Titulo de la pagina
-                      'Customizer Neon', //Nombre del menu
+    add_options_page( 'Customizer Neon', //Título de la página
+                      'Customizer Neon', //Nombre del menú
                       'manage_options', //Nivel de acceso, solo usuarios
                       'cn-conf-ga', // slug
-                      'cn_genera_pagina' ); //Funcion que procesara todo
+                      'cn_genera_pagina' ); //Función que procesará todo
 }
 
 add_action( 'admin_menu', 'cn_menu_ajustes' );
@@ -106,6 +111,7 @@ add_action( 'admin_menu', 'cn_menu_ajustes' );
 function cn_genera_pagina() {
 
   // Conseguir el valor del Precio base de todos los elementos:
+  $cn_pagina                      = get_option( 'cn_pagina' ) ;
   $cn_precio_base                 = get_option( 'cn_precio_base' ) ;
   $cn_precio_dimmer               = get_option( 'cn_precio_dimmer' ) ;
   $cn_precio_metacrilato          = get_option( 'cn_precio_metacrilato' ) ;
@@ -120,7 +126,7 @@ function cn_genera_pagina() {
   $cn_precio_sietediaslaborales   = get_option( 'cn_precio_sietediaslaborales' ) ;
   $cn_precio_4872                 = get_option( 'cn_precio_4872' ) ;
 
-  require('formularioAdmin/configuracionesForm.php'); 
+  require('formularioAdmin/configuracionesForm.php');
 }
 
 add_action( 'admin_post_guardar_ga', 'cn_guardar_ga' );
@@ -135,6 +141,7 @@ function cn_guardar_ga() {
     check_admin_referer( 'token_ga' );
 
     //Limpiar valor, para prevenir problemas de seguridad
+    $cn_pagina                      = sanitize_text_field( $_POST['cn_pagina'] );
     $cn_precio_base                 = sanitize_text_field( $_POST['cn_precio_base'] );
     $cn_precio_dimmer               = sanitize_text_field( $_POST['cn_precio_dimmer'] );
     $cn_precio_metacrilato          = sanitize_text_field( $_POST['cn_precio_metacrilato'] );
@@ -150,6 +157,7 @@ function cn_guardar_ga() {
     $cn_precio_4872                 = sanitize_text_field( $_POST['cn_precio_4872'] );
 
     // Guardar en la base de datos
+    update_option( 'cn_pagina', $cn_pagina );
     update_option( 'cn_precio_base', $cn_precio_base );
     update_option( 'cn_precio_dimmer', $cn_precio_dimmer );
     update_option( 'cn_precio_metacrilato', $cn_precio_metacrilato );
@@ -165,13 +173,13 @@ function cn_guardar_ga() {
     update_option( 'cn_precio_4872', $cn_precio_4872 );
 
     // Regresamos a la pagina de ajustes
-    wp_redirect( 
-      
-      add_query_arg ( 
+    wp_redirect(
+
+      add_query_arg (
         'page',
         'cn-conf-ga',
-        admin_url( 'options-general.php' ) 
-      ) 
+        admin_url( 'options-general.php' )
+      )
     );
     exit;
 }
@@ -180,6 +188,25 @@ function cn_guardar_ga() {
 add_filter( 'the_content', 'cn_agregar_anuncio' );
 
 function cn_agregar_anuncio ( $the_content ) {
+
+    global $wpdb;
+
+    $cn_pagina = get_option( 'cn_pagina' ) ;
+
+    $sql = "SELECT id FROM {$wpdb->prefix}posts WHERE post_title = '".$cn_pagina."' ";
+    $results = $wpdb->get_results( $sql, OBJECT );
+
+    foreach ($results as $key ) {
+
+      $id_pagina[] = $key->id;
+
+    }
+    //echo "--->".$id_pagina[0];
+    //die();
+
+    $pagina = $id_pagina[0];
+
+    if(!empty($pagina) ){
 
 
     //Creamos una variable que contenga todo el contenido
@@ -190,12 +217,13 @@ function cn_agregar_anuncio ( $the_content ) {
     //if (is_singular() && is_main_query() && in_the_loop()){
     //if (is_page() && is_main_query() && in_the_loop()){
     //if (is_home() && is_main_query() && in_the_loop()){
-    if (is_page(12) && is_main_query() && in_the_loop()){
+    if (is_page($pagina) && is_main_query() && in_the_loop()){
       // Al final del articulo agregar el codigo del anuncio....
       //$articulo .= '<div class="ads"> *** Aquí va el formulario *** </div>';
 
 
       // Conseguir el valor del Precio base de todos los elementos:
+      $cn_pagina                      = get_option( 'cn_pagina' ) ;
       $cn_precio_base                 = get_option( 'cn_precio_base' ) ;
       $cn_precio_dimmer               = get_option( 'cn_precio_dimmer' ) ;
       $cn_precio_metacrilato          = get_option( 'cn_precio_metacrilato' ) ;
@@ -213,9 +241,13 @@ function cn_agregar_anuncio ( $the_content ) {
       require('formularioCustomizer.php');
     }
 
+
+  }
     // siempre debe regresar el contenido que se desea mostrar
     //return $articulo;
-    return;  
+    return;
+
+    wp_die();
 }
 
 add_action('wp_ajax_jnjtest', 'jnj_mi_funcion');
@@ -225,7 +257,7 @@ add_action('wp_ajax_nopriv_jnjtest', 'jnj_mi_funcion');
 // en el formato que queramos..
 function jnj_mi_funcion()
 {
-    
+
   global $wpdb;
 
   $sql = "SELECT * FROM {$wpdb->prefix}options WHERE option_name = 'cn_precio_base'";
@@ -245,12 +277,12 @@ function jnj_mi_funcion()
 
     echo '<div id="caja">
             <div class="neon_effect '.$fuente.' '.$color.' ">
-              <p>'.$_POST['rotulo'].'</p>          
+              <p>'.$_POST['rotulo'].'</p>
             </div>
           <div id="caja">';
   }
 
   //echo '<pre style="color: #fff">'; print_r($_POST); echo '</pre>';
-  
+
   wp_die();
 }
