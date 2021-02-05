@@ -258,19 +258,45 @@ add_action('wp_ajax_nopriv_jnjtest', 'jnj_mi_funcion');
 function jnj_mi_funcion()
 {
 
-  global $wpdb;
-
-  $sql = "SELECT * FROM {$wpdb->prefix}options WHERE option_name = 'cn_precio_base'";
+  /*global $wpdb;
+  //echo '<pre style="color: #fff">'; print_r($_POST); echo '</pre>';
+  //$sql = "SELECT * FROM {$wpdb->prefix}options WHERE option_name = 'cn_precio_base'";
+  $sql = "SELECT option_name, option_value FROM {$wpdb->prefix}options WHERE option_name LIKE '%cn_precio%'";
   $results = $wpdb->get_results( $sql, OBJECT );
 
+  foreach ($results as $key => $valor) {
 
-  $fuente = $_POST['fuenteLetras'];
-  $color = $_POST['color'];
+    $res[$valor->option_name] = $valor->option_value;
 
-  foreach ($results as $key ) {
+  }*/
+
+    //echo '<pre>'.print_r($res).'</pre><br/>';
+    //echo "Precio Base: ".$res['cn_precio_base']."<br/>";
+      
+      echo "<b>Fuente de Letra: </b>". $_POST['fuenteLetrasText']."<br/>";
+      echo "<b>Ancho:</b> ". number_format($_POST['anchocm'],2,",",".")." cm <br/>";
+      echo "<b>Alto:</b> ".$_POST['alto']." cm <br/>";
+      echo "<b>Trasera del Neon:</b> ".number_format($_POST['trasera'],4,",",".")."&euro;<br/>";
+      echo "<b>Sujeción del Neon:</b> ".number_format($_POST['sujecionNeon'],2,",",".")."&euro;<br/>";
+      echo "<b>Dimmer (controlador de luz):</b> ".number_format($_POST['dimmerNeon'],2,",",".")."&euro;<br/>";
+      echo "<b>Tiempo de Entrega:</b> ".$_POST['tiemposEntregaText']." ".number_format($_POST['tiemposEntrega'],2,",",".")."&euro;<br/>";
+      echo "<b>Forma del Contorno: </b>". $_POST['contorno']."<br/>";
+      echo "<b>Color: </b>". $_POST['color']."<br/>";
+      
+
+    $traseraNeon      = $_POST['anchocm'] * $_POST['alto'] * $_POST['trasera'];
+    $sujecionNeon     = $_POST['sujecionNeon'];
+    $dimmerNeon       = $_POST['dimmerNeon'];
+    $tiemposEntrega   = $_POST['tiemposEntrega'];
+ 
+    $precio      = $traseraNeon + $sujecionNeon + $dimmerNeon + $tiemposEntrega;
+    $precioFinal = $precio * 3.5;
+
+    $fuente = $_POST['fuenteLetras'];
+    $color = $_POST['color'];
 
     echo '<h1>
-      <small class="text-muted"> <strong>'. $key->option_value. '&euro;<strong></small>
+      <small class="text-muted"> <strong>'. number_format($precioFinal,2,",","."). '&euro;<strong></small>
     </h1>
     <div style="font-size: 10px; color: #870D00">IVA incluido</div>
     <div style="font-size: 10px;">ENVÍO GRATUITO</div>';
@@ -279,10 +305,7 @@ function jnj_mi_funcion()
             <div class="neon_effect '.$fuente.' '.$color.' ">
               <p>'.$_POST['rotulo'].'</p>
             </div>
-          </div>';
-  }
-
-  //echo '<pre style="color: #fff">'; print_r($_POST); echo '</pre>';
+          </div>';  
 
   wp_die();
 }

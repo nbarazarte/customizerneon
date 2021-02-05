@@ -8,9 +8,9 @@
   </div>
 
   <div class="col-sm-4">
-    
+    <label for="alto">Tipo de Letra:</label>
     <select form="letras" class="form-select" id="letra">
-      <option value="Tipos de letras" selected>Tipos de letras</option>
+      
       <option style="font-family:'Axaxax W05 Regular';" value="axaxax">Axaxax W05 Regular</option>
       <option style="font-family:'neon_lightsregular';"value="neon-lights">neon_lightsregular</option>
       <option style="font-family:'Monoton';"value="monoton">Monoton</option>
@@ -36,9 +36,9 @@
   </div>
 
   <div class="col-sm-4">
-    
+    <label for="alto">Tiempos de Entrega:</label>
     <select for="tiempos" class="form-select" id="tiempos">
-      <option value="Tiempos de entrega" selected>Tiempos de entrega</option>
+      
       <option value="<?php echo esc_html($cn_precio_sietediaslaborales);?>">7 días (laborales)</option>
       <option value="<?php echo esc_html($cn_precio_4872);?>">48 a 72 horas</option>
     </select>

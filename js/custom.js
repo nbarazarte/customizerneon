@@ -15,7 +15,7 @@ function jQueryDoSomethingAJAX() {
     var x = document.getElementById("tiempos").selectedIndex;
     var y = document.getElementById("tiempos").options;
     //alert("Index: " + y[x].index + " is " + y[x].text);
-    //var tiemposEntrega = y[x].text;
+    var tiemposEntregaText = y[x].text;
     var tiemposEntrega = y[x].value;
 
     var contornos = document.getElementsByName("contornos");
@@ -73,20 +73,6 @@ function jQueryDoSomethingAJAX() {
 
     var color = txt;
 
-    var data = {
-        'action': 'jnjtest',
-        'rotulo': rotulo,
-        'alto': alto,
-        'ancho': ancho,    
-        'fuenteLetras': fuenteLetras,
-        'tiemposEntrega': tiemposEntrega,
-        'contorno': contorno,
-        'trasera': trasera,
-        'sujecionNeon': sujecionNeon,
-        'dimmerNeon': dimmerNeon,
-        'color': color,
-    };
-
     //Texto
     var cadena = rotulo;
     var canvas = document.getElementById("myCanvas");
@@ -122,7 +108,24 @@ function jQueryDoSomethingAJAX() {
     //console.log('Ancho:', anchocm, 'centímetros.');
 
     //Seteamos el ancho:
-    document.getElementById("ancho").value = anchocm.toFixed(3);
+    document.getElementById("ancho").value = anchocm.toFixed(3);    
+
+    var data = {
+        'action': 'jnjtest',
+        'rotulo': rotulo,
+        'alto': alto,
+        'ancho': ancho,    
+        'fuenteLetras': fuenteLetras,
+        'tiemposEntrega': tiemposEntrega,
+        'contorno': contorno,
+        'trasera': trasera,
+        'sujecionNeon': sujecionNeon,
+        'dimmerNeon': dimmerNeon,
+        'color': color,
+        'anchocm': anchocm.toFixed(3),
+        'fuenteLetrasText': fuenteLetrasText,
+        'tiemposEntregaText': tiemposEntregaText,
+    };
 
     var protocolo = window.location.protocol;
     var hostname = window.location.hostname;
