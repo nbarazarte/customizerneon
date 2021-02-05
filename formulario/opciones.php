@@ -11,8 +11,8 @@
     
     <select form="letras" class="form-select" id="letra">
       <option value="Tipos de letras" selected>Tipos de letras</option>
-      <option style="font-family:'Axaxax W05 Regular';" value="axaxax">Axaxax</option>
-      <option style="font-family:'neon_lightsregular';"value="neon-lights">Neon Lights</option>
+      <option style="font-family:'Axaxax W05 Regular';" value="axaxax">Axaxax W05 Regular</option>
+      <option style="font-family:'neon_lightsregular';"value="neon-lights">neon_lightsregular</option>
       <option style="font-family:'Monoton';"value="monoton">Monoton</option>
     </select>
   </div>

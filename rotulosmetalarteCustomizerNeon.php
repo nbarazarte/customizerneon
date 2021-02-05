@@ -279,7 +279,7 @@ function jnj_mi_funcion()
             <div class="neon_effect '.$fuente.' '.$color.' ">
               <p>'.$_POST['rotulo'].'</p>
             </div>
-          <div id="caja">';
+          </div>';
   }
 
   //echo '<pre style="color: #fff">'; print_r($_POST); echo '</pre>';

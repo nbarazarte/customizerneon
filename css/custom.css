@@ -5,7 +5,20 @@
 #myDIV {
 
   display: none;
-	
+  /*visibility: hidden;*/
+  /*visibility: hidden;*/
+}
+
+#myButton {
+
+  /*display: none;*/
+  /*visibility: hidden;*/
+  /*visibility: visible;*/
+  display: inline;
+}
+
+#myCanvas{
+  display: none;
 }
 
 /****************************************************************************************/
