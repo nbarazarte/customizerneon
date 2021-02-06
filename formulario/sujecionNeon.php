@@ -2,6 +2,7 @@
 
   <div class="card-header">
     Sujeción del Neon
+    <input type="hidden" id="tipoSujecion" name="tipoSujecion" readonly="yes" value="ancladoalapared">
   </div>
 
   <div class="card-body">
@@ -19,7 +20,7 @@
                <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="sujecion" id="ancladoalapared" value="<?php echo esc_html($cn_precio_ancladoalapared);?>" checked>      
+                  <input onclick="textoRadio('tipoSujecion',this.id)" class="form-check-input" type="radio" name="sujecion" id="ancladoalapared" value="<?php echo esc_html($cn_precio_ancladoalapared);?>" checked>      
                 </div>
 
                 <div class="col-sm-12">
@@ -40,7 +41,7 @@
                <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="sujecion" id="colgadoaltecho" value="<?php echo esc_html($cn_precio_colgadoaltecho);?>">      
+                  <input onclick="textoRadio('tipoSujecion',this.id)" class="form-check-input" type="radio" name="sujecion" id="colgadoaltecho" value="<?php echo esc_html($cn_precio_colgadoaltecho);?>">      
                 </div>
 
                 <div class="col-sm-12">
@@ -61,7 +62,7 @@
                <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="sujecion" id="colgadocomouncuadro" value="<?php echo esc_html($cn_precio_colgadocomouncuadro);?>">      
+                  <input onclick="textoRadio('tipoSujecion',this.id)" class="form-check-input" type="radio" name="sujecion" id="colgadocomouncuadro" value="<?php echo esc_html($cn_precio_colgadocomouncuadro);?>">      
                 </div>
 
                 <div class="col-sm-12">
@@ -82,7 +83,7 @@
                <div class="row">
 
                 <div class="col-sm-12">
-                  <input class="form-check-input" type="radio" name="sujecion" id="sinsujecion" value="<?php echo esc_html($cn_precio_sinsujecion);?>">      
+                  <input onclick="textoRadio('tipoSujecion',this.id)" class="form-check-input" type="radio" name="sujecion" id="sinsujecion" value="<?php echo esc_html($cn_precio_sinsujecion);?>">      
                 </div>
 
                 <div class="col-sm-12">

@@ -273,17 +273,6 @@ function jnj_mi_funcion()
     //echo '<pre>'.print_r($res).'</pre><br/>';
     //echo "Precio Base: ".$res['cn_precio_base']."<br/>";
       
-      echo "<b>Fuente de Letra: </b>". $_POST['fuenteLetrasText']."<br/>";
-      echo "<b>Ancho:</b> ". number_format($_POST['anchocm'],2,",",".")." cm <br/>";
-      echo "<b>Alto:</b> ".$_POST['alto']." cm <br/>";
-      echo "<b>Trasera del Neon:</b> ".number_format($_POST['trasera'],4,",",".")."&euro;<br/>";
-      echo "<b>Sujeción del Neon:</b> ".number_format($_POST['sujecionNeon'],2,",",".")."&euro;<br/>";
-      echo "<b>Dimmer (controlador de luz):</b> ".number_format($_POST['dimmerNeon'],2,",",".")."&euro;<br/>";
-      echo "<b>Tiempo de Entrega:</b> ".$_POST['tiemposEntregaText']." ".number_format($_POST['tiemposEntrega'],2,",",".")."&euro;<br/>";
-      echo "<b>Forma del Contorno: </b>". $_POST['contorno']."<br/>";
-      echo "<b>Color: </b>". $_POST['color']."<br/>";
-      
-
     $traseraNeon      = $_POST['anchocm'] * $_POST['alto'] * $_POST['trasera'];
     $sujecionNeon     = $_POST['sujecionNeon'];
     $dimmerNeon       = $_POST['dimmerNeon'];
@@ -291,7 +280,18 @@ function jnj_mi_funcion()
  
     $precio      = $traseraNeon + $sujecionNeon + $dimmerNeon + $tiemposEntrega;
     $precioFinal = $precio * 3.5;
+/*
+    echo "<b>Fuente de Letra: </b>". $_POST['fuenteLetrasText']."<br/>";
+    echo "<b>Ancho:</b> ". number_format($_POST['anchocm'],2,",",".")." cm <br/>";
+    echo "<b>Alto:</b> ".$_POST['alto']." cm <br/>";
+    echo "<b>Trasera del Neon:</b> ".$_POST['tipoTrasera']." ".number_format($traseraNeon,2,",",".")."&euro;<br/>";
+    echo "<b>Sujeción del Neon:</b> ".$_POST['tipoSujecion']." ".number_format($_POST['sujecionNeon'],2,",",".")."&euro;<br/>";
+    echo "<b>Dimmer (controlador de luz):</b> ".number_format($_POST['dimmerNeon'],2,",",".")."&euro;<br/>";
+    echo "<b>Tiempo de Entrega:</b> ".$_POST['tiemposEntregaText']." ".number_format($_POST['tiemposEntrega'],2,",",".")."&euro;<br/>";
+    echo "<b>Forma del Contorno: </b>". $_POST['contorno']."<br/>";
+    echo "<b>Color: </b>". $_POST['color']."<br/>";
 
+*/
     $fuente = $_POST['fuenteLetras'];
     $color = $_POST['color'];
 

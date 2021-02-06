@@ -38,6 +38,18 @@ function jQueryDoSomethingAJAX() {
         }
     }
 
+    var textoCorrecto;
+    switch (document.getElementById("tipoTrasera").value) {
+      case 'maderadepino':
+        textoCorrecto = "madera de pino";
+        break;
+
+        default:
+            textoCorrecto = document.getElementById("tipoTrasera").value;
+        break;
+    }
+
+    var tipoTrasera = textoCorrecto;
     var trasera = txt;
 
     var sujecion = document.getElementsByName("sujecion");
@@ -49,6 +61,31 @@ function jQueryDoSomethingAJAX() {
         }
     }
 
+    var textoCorrecto;
+    switch (document.getElementById("tipoSujecion").value) {
+      case 'ancladoalapared':
+        textoCorrecto = "anclado a la pared";
+        break;
+
+      case 'colgadoaltecho':
+        textoCorrecto = "colgado al techo";
+        break;
+
+      case 'colgadocomouncuadro':
+        textoCorrecto = "colgado como un cuadro";
+        break;
+
+      case 'sinsujecion':
+        textoCorrecto = "sin sujeción";
+        break;                          
+
+        default:
+            textoCorrecto = document.getElementById("tipoSujecion").value;
+        break;
+    }
+
+
+    var tipoSujecion = textoCorrecto;
     var sujecionNeon = txt;
 
     var dimmer = document.getElementsByName("dimmer");
@@ -119,7 +156,9 @@ function jQueryDoSomethingAJAX() {
         'tiemposEntrega': tiemposEntrega,
         'contorno': contorno,
         'trasera': trasera,
+        'tipoTrasera': tipoTrasera,
         'sujecionNeon': sujecionNeon,
+        'tipoSujecion': tipoSujecion,
         'dimmerNeon': dimmerNeon,
         'color': color,
         'anchocm': anchocm.toFixed(3),
@@ -186,3 +225,7 @@ window.addEventListener("load", function() {
 });
 */
 
+function textoRadio(input,name){
+
+    document.getElementById(input).value = name;
+}
